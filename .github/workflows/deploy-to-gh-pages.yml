@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: IvanCybercom/github-pages-deploy-action@master
+      uses: IvanCybercom/play@master
       env:
         ACCESS_TOKEN: ${{ secrets.gh_pages }}
         BASE_BRANCH: master 
