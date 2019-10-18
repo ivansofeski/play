@@ -20,6 +20,8 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
+        git config user.email "ivan.sofeski@cybercom.com"
+        git config user.name "IvanCybercom"
         npm run deploy
       env:
         CI: true
