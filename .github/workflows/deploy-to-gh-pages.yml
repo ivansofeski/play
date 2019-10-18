@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: IvanCybercom/play@master
+      uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: IvanCybercom/play@master
+      uses: IvanCybercom/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.gh_pages }}
         BASE_BRANCH: master 
         BRANCH: gh-pages 
-        FOLDER: build 
-        BUILD_SCRIPT: npm ci && npm run deploy 
+        FOLDER: storybook-static 
+        BUILD_SCRIPT: npm ci && npm run-script build-storybook
