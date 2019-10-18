@@ -20,12 +20,9 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        git config user.email "ivan.sofeski@cybercom.com"
-        git config user.name "IvanCybercom"
+    - name: Deploy to GH Pages
+      run: |
+        git config --global user.email "ivan.sofeski@cybercom.com"
+        git config --global user.name "IvanCybercom"
+        git remote set-url origin https://${{ secrets.gh_pages }}@github.com/ivancybercom/play.git
         npm run deploy
-      env:
-        CI: true
-        GITHUB_TOKEN: ${{ secrets.gh_pages }}
-        BASE_BRANCH: master 
-        BRANCH: gh-pages 
-        FOLDER: storybook-static
