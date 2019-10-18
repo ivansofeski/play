@@ -18,7 +18,7 @@ jobs:
         npm ci
         npm run deploy
       env:
-        ACCESS_TOKEN: ${{ secrets.gh_pages }}
+        GITHUB_TOKEN: ${{ secrets.gh_pages }}
         BASE_BRANCH: master 
         BRANCH: gh-pages 
         FOLDER: storybook-static 
