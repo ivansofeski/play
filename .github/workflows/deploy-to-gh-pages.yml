@@ -14,13 +14,11 @@ jobs:
         version: 10.x
 
     - name: Build and Deploy
-      run: |
-        npm ci
-        npm run deploy
       env:
         GITHUB_TOKEN: ${{ secrets.gh_pages }}
         BASE_BRANCH: master 
         BRANCH: gh-pages 
         FOLDER: storybook-static 
-        NAME: Ivan
-        E_MAIL: ivan.sofeski@cybercom.com
+      run: |
+        npm ci
+        npm run deploy
