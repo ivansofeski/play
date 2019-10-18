@@ -7,14 +7,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
 
     - name: Build and Deploy
-      uses: IvanCybercom/play@master
       env:
         ACCESS_TOKEN: ${{ secrets.gh_pages }}
         BASE_BRANCH: master 
         BRANCH: gh-pages 
         FOLDER: storybook-static 
-        BUILD_SCRIPT: npm ci && npm run-script build-storybook
+        BUILD_SCRIPT: npm ci && npm run build-storybook
