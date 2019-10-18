@@ -22,3 +22,5 @@ jobs:
         BASE_BRANCH: master 
         BRANCH: gh-pages 
         FOLDER: storybook-static 
+        NAME: Ivan
+        E_MAIL: ivan.sofeski@cybercom.com
